@@ -43,8 +43,8 @@ Route::resource('boards/{board}/tasks', TaskController::class)->middleware('auth
 // Route::post('boards/{board}/tasks', [TaskController::class, 'storeFromBoard'])->middleware('auth')->name('boards.tasks.store');
 
 Route::post('boards/{board}/boarduser', [BoardUserController::class ,  'store'])->middleware('auth')->name('boards.boarduser.store');
-Route::delete('boarduser/{BoardUser}', [BoardUserController::class ,  'destroy'])->middleware('auth')->name('boards.boarduser.destroy');
+Route::delete('boarduser/{boardUser}', [BoardUserController::class ,  'destroy'])->middleware('auth')->name('boards.boarduser.destroy');
 Route::post('tasks/{task}/taskuser', [TaskUserController::class, 'store'])->middleware('auth')->name('boards.taskuser.store');
-Route::delete('taskuser/{TaskUser}', [TaskUserController::class, 'destroy'])->middleware('auth')->name('boards.taskuser.destroy');
+Route::delete('taskuser/{taskUser}', [TaskUserController::class, 'destroy'])->middleware('auth')->name('boards.taskuser.destroy');
 Route::post('task/{task}/user/{user}/comment', [CommentController::class, 'store'])->middleware('auth')->name('comment.store');
 Route::delete('comment/{comment}', [CommentController::class, 'destroy'])->middleware('auth')->name('comment/destroy');
